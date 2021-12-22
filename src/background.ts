@@ -10,7 +10,7 @@ export interface FetchResponse {
 	data: any;
 }
 
-const BASE_URL = "https://www.reddit.com";
+const BASE_URL = "https://www.youtube.com";
 
 chrome.runtime.onMessage.addListener(
 	(request: FetchRequest, _, sendResponse) => {
