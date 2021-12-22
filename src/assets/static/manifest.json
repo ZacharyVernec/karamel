@@ -1,9 +1,9 @@
 {
 	"manifest_version": 2,
 
-	"name": "Karamel: View Reddit comments on YouTube™",
+	"name": "Karamel: View Reddit comments on Rooster Teeth",
 	"short_name": "Karamel",
-	"description": "Step up your viewing experience by embedding relevant Reddit comments under YouTube videos.",
+	"description": "Step up your viewing experience by embedding relevant Reddit comments under Rooster Teeth videos.",
 	"version": "1.5.0",
 
 	"browser_action": {
@@ -16,7 +16,7 @@
 	},
 	"content_scripts": [
 		{
-			"matches": ["https://*.youtube.com/*"],
+			"matches": ["https://roosterteeth.com/watch/*"],
 			"js": ["index.js"],
 			"run_at": "document_end"
 		}
