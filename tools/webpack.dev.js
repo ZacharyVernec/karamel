@@ -24,7 +24,7 @@ module.exports = Object.assign(base, {
 			"process.env.NODE_ENV": `"development"`
 		}),
 		new ForkTsCheckerPlugin({
-			typescript: true
+			tslint: true
 		}),
 		new FriendlyErrorsPlugin()
 	]),

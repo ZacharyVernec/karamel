@@ -1,9 +1,11 @@
 {
 	"manifest_version": 2,
-	"name": "Karamel: View Reddit comments on Rooster Teeth™",
-	"short_name": "Karamel-RT",
-	"description": "Step up your viewing experience by embedding relevant Reddit comments under Rooster Teeth videos.",
+
+	"name": "Karamel: View Reddit comments on YouTube™",
+	"short_name": "Karamel",
+	"description": "Step up your viewing experience by embedding relevant Reddit comments under YouTube videos.",
 	"version": "1.5.0",
+
 	"browser_action": {
 		"default_icon": "icon-48.png"
 	},
@@ -14,27 +16,19 @@
 	},
 	"content_scripts": [
 		{
-			"matches": [
-				"https://*.youtube.com/*"
-			],
-			"js": [
-				"index.js"
-			],
+			"matches": ["https://*.youtube.com/*"],
+			"js": ["index.js"],
 			"run_at": "document_end"
 		}
 	],
 	"background": {
-		"scripts": [
-			"background.js"
-		],
+		"scripts": ["background.js"],
 		"persistent": false
 	},
 	"options_ui": {
 		"page": "options.html",
 		"open_in_tab": false
 	},
-	"permissions": [
-		"https://www.youtube.com/",
-		"storage"
-	]
+
+	"permissions": ["https://www.reddit.com/", "storage"]
 }

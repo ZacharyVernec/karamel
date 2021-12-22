@@ -1,14 +1,13 @@
 const common = require("./common");
 const { join, resolve } = require("path");
 const webpack = require("webpack");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CleanPlugin = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-	mode: "none",
 	entry: {
-		index: `${common.paths.src}/index.tsx`,
-		background: `${common.paths.src}/background.ts`
+		index: [`${common.paths.src}/index.tsx`],
+		background: [`${common.paths.src}/background.ts`]
 	},
 	output: {
 		path: common.paths.dist,
@@ -37,14 +36,10 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new CleanWebpackPlugin({
+		new CleanPlugin([common.paths.dist], {
 			root: process.cwd(),
 			verbose: false
 		}),
-		new CopyPlugin({
-			patterns: [
-				{ from: common.paths.static }
-			]
-		})
+		new CopyPlugin([{ from: common.paths.static }])
 	]
 };
